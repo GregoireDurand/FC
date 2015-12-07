@@ -22,7 +22,8 @@ public class FifoMain {
 		System.out.println("suppression... reste "+file);
 		file.suppression();
 		System.out.println("suppression... reste "+file);
-		
+		System.out.println("Est vide ?"+file.estVide());
+
 	}
 
 }

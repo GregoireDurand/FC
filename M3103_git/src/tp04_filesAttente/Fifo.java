@@ -55,12 +55,9 @@ public class Fifo<E> {
 			return null;
 		}
 		E val = premier.valeur;
-			System.out.println("valeur à supprimer = "+premier.valeur);
 		if(premier == dernier)
 		{
-			System.out.println("[Suppression] Etat de la liste => 1er = dernier");
 			premier = null;
-			if(premier!=null)System.out.println("[Suppression] La nouvelle tête de liste fifo est => "+premier.valeur);
 		}
 		else
 		{
