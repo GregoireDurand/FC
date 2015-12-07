@@ -55,13 +55,19 @@ public class Fifo<E> {
 			return null;
 		}
 		E val = premier.valeur;
+			System.out.println("valeur à supprimer = "+premier.valeur);
 		if(premier == dernier)
 		{
-			premier.lien = null;
+			System.out.println("[Suppression] Etat de la liste => 1er = dernier");
+			premier = null;
+			dernier = null;
+			if(premier!=null)System.out.println("La nouvelle tête de liste fifo est => "+premier.valeur);
 		}
 		else
 		{
+			System.out.println("[Suppression] Etat de la liste => il en reste....");
 			premier=premier.lien;
+			System.out.println("La nouvelle tête de liste fifo est => "+premier.valeur);
 		}
 		return val;
 	}

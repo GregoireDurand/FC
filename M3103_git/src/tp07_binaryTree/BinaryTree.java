@@ -306,23 +306,48 @@ public class BinaryTree<E>
         
         
 
-    public String parNiveau()	// = stratégie en largeur
+    public String parNiveau() throws InterruptedException	// = stratégie en largeur
     {
         Fifo<BinaryTree<E>> file = new Fifo<>();
         String str="";
         BinaryTree<E> arbreLocal = this;
         if(arbreLocal.estVide()) return "Pas d'arbre";
-        file.ajouter(arbreLocal);
+						System.out.println("ArbreLocal INITIAL = "+arbreLocal);
+		
+
         while(!arbreLocal.estVide()||!file.estVide())
         {
+        				System.out.println("Début d'une boucle - ArbreLocal = \n\t["+arbreLocal+"]");
+
+
         	if(!arbreLocal.gauche().estVide())
+        	{
+        				System.out.println("G pas vide - ajout");
         		file.ajouter(arbreLocal.gauche());
+        				System.out.println("File d'attente : "+file);
+
+        	}
         	if(!arbreLocal.droit().estVide())
+        	{
+        				System.out.println("D pas vide - ajout");
         		file.ajouter(arbreLocal.droit());
-        	str+=arbreLocal.racine();
+        				System.out.println("File d'attente : "+file);
+
+        	}
+        	str+=arbreLocal.racine();        	
+        				System.out.println("Fin d'une boucle - ajout ("+str+")");
+
+    		Thread.sleep(100);
         	arbreLocal=file.suppression();
+    					System.out.println("FIN DE BOUCLE : File d'attente : "+file);
+        				System.out.println("FIN DE BOUCLE : ArbreLocal = \t["+arbreLocal+"]");
+        				System.out.println("File vide ?"+file.estVide());
+        				System.out.println("Arbre vide ?"+arbreLocal.estVide()+"\n");
+
+
+
         }
-    	return str;    
+    	return str;
     }
     
     public String suffixeIteratif()
@@ -332,3 +357,7 @@ public class BinaryTree<E>
     }
 
 }
+
+
+
+

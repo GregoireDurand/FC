@@ -6,7 +6,10 @@ public class FifoMain {
 		// TODO Auto-generated method stub
 
 		Fifo<String> file = new Fifo<>();
-		
+		System.out.println("Est vide ?"+file.estVide());
+		file.suppression();
+		System.out.println("suppression... reste "+file);
+
 		file.ajouter("un");
 		file.ajouter("2");
 		file.ajouter("trois");
@@ -14,7 +17,11 @@ public class FifoMain {
 		System.out.println("Est vide ?"+file.estVide());
 		System.out.println("Contient 2 ?"+file.contient("2"));
 		file.suppression();
-		System.out.println(file);
+		System.out.println("suppression...reste "+file);
+		file.suppression();
+		System.out.println("suppression... reste "+file);
+		file.suppression();
+		System.out.println("suppression... reste "+file);
 		
 	}
 
