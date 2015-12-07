@@ -315,7 +315,7 @@ public class BinaryTree<E>
 						System.out.println("ArbreLocal INITIAL = "+arbreLocal);
 		
 
-        while(!arbreLocal.estVide()||!file.estVide())
+        while(arbreLocal!=null||!file.estVide())
         {
         				System.out.println("Début d'une boucle - ArbreLocal = \n\t["+arbreLocal+"]");
 
@@ -342,7 +342,7 @@ public class BinaryTree<E>
     					System.out.println("FIN DE BOUCLE : File d'attente : "+file);
         				System.out.println("FIN DE BOUCLE : ArbreLocal = \t["+arbreLocal+"]");
         				System.out.println("File vide ?"+file.estVide());
-        				System.out.println("Arbre vide ?"+arbreLocal.estVide()+"\n");
+        				System.out.println("Arbre vide ?"+(arbreLocal==null));
 
 
 
