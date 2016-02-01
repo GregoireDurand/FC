@@ -2,13 +2,13 @@
 package tp08_searchTree;
 
 /**
- * Classe utiliatire pour la représentation et la manipulation d'un "arbre de recherche"
- * (ou "arbre binaire ordonné").
- * Implémentation purement dynamique adaptée aux traitements récursifs.
- * L'équilibrage des arbres n'est généralement pas pris en compte ici.
+ * Classe utilitaire pour la repr�sentation et la manipulation d'un "arbre de recherche"
+ * (ou "arbre binaire ordonn�").
+ * Impl�mentation purement dynamique adapt�e aux traitements r�cursifs.
+ * L'�quilibrage des arbres n'est g�n�ralement pas pris en compte ici.
  * 
  * @author Erick Timmerman
- * @param <E> type des éléments de l'arbre
+ * @param <E> type des �l�ments de l'arbre
  */
 public class SearchTree<E extends Comparable<E>>
 {
@@ -18,7 +18,7 @@ public class SearchTree<E extends Comparable<E>>
         SearchTree<T> left;
         SearchTree<T> right;
 
-        Node(T value) 	// création d'un noeud isolé.
+        Node(T value) 	// cr�ation d'un noeud isol�.
         {
             this.value = value;
             this.left = new SearchTree<>();
@@ -46,9 +46,9 @@ public class SearchTree<E extends Comparable<E>>
     }
 
     /**
-     * Construit un arbre de recherche équilibré comportant toutes les valeurs
-     * apparaissant dans un vecteur ordonné fourni.
-     * Ce vecteur doit être ordonné (ordre croissant) aucune vérification n'est faite ici.
+     * Construit un arbre de recherche �quilibr� comportant toutes les valeurs
+     * apparaissant dans un vecteur ordonn� fourni.
+     * Ce vecteur doit être ordonn� (ordre croissant) aucune v�rification n'est faite ici.
      */
     public SearchTree(E[] elements)
     {
@@ -58,8 +58,8 @@ public class SearchTree<E extends Comparable<E>>
     private SearchTree<E> makeFrom(E[] v, int deb, int fin)
     {
         /* 
-         * Construction d'un arbre de recherche équilibré à partir d'une portion
-         * de vecteur ordonné.
+         * Construction d'un arbre de recherche �quilibr� à partir d'une portion
+         * de vecteur ordonn�.
          * La valeur de la racine est choisie au milieu de la portion de vecteur.
          */
         if (deb > fin) 	// portion de vecteur vide.
@@ -107,7 +107,7 @@ public class SearchTree<E extends Comparable<E>>
         root = tree.root;
     }
     
-    // On peut dès à présent oublier la classe interne Node!
+    // On peut dès à pr�sent oublier la classe interne Node!
 
     public boolean estUneFeuille()
     {
@@ -129,7 +129,7 @@ public class SearchTree<E extends Comparable<E>>
 
     /** 
      * Calcule la suite "infixe" des valeurs de l'arbre.
-     * Cette suite est naturellement ordonnée (croissante) si l'arbre est
+     * Cette suite est naturellement ordonn�e (croissante) si l'arbre est
      * effectivement un arbre de recherche.
      */
     public String infixe() 		// suite infixe ou GRD
@@ -140,7 +140,7 @@ public class SearchTree<E extends Comparable<E>>
     }
     
     /**    
-     * Détermine si l'arbre contient la valeur fournie.
+     * D�termine si l'arbre contient la valeur fournie.
      */
     public boolean contient(E val)
     {
@@ -195,7 +195,7 @@ public class SearchTree<E extends Comparable<E>>
     }
 
     /** 
-     * Détermine si l'arbre (this) est effectivement un arbre de recherche.
+     * D�termine si l'arbre (this) est effectivement un arbre de recherche.
      */
     public boolean isValid()
     {
